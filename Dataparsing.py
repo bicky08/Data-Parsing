@@ -21,13 +21,10 @@ def parse_data(text):
     plaintiff_attorney_pattern = r'Plaintiff Attorney: ([A-Za-z &.,]*)'
     defendant_attorney_pattern = r'Defendant Attorney:([^\n]*)'
     case_description_pattern = r'CV-\d{6}-\d{2}/\w{2} - (.*)'
-    # court_part_pattern = r'(?:Bronx County Civil Court / Part -|Kings County Civil Court / Part -|New York County Civil Court / Part -|Queens County Civil Court / Part -|Richmond County Civil Court / Part -|Suffolk County District Court -) (.*)'
     court_part_pattern = r'(?<=Part - ).+'
     judge_pattern = r'Judge -([^\n]*)'
     on_for_trial_pattern = r'On For - ([^/]+)'
-    # appearance_time_pattern = r'(\d{2}:\d{2})\s*Appearance Time'
     appearance_time_pattern = r'(?<=Appearance Time )\d{2}:\d{2}'
-    # court_name_pattern = r'(.*?)\s*/\s*Part\b'
     court_name_pattern = r'.+(?= / Part)'
 
     # Initialize data storage
